@@ -95,8 +95,8 @@ public class Vasquez_Alexander_Estructura {
                  int divisores=0;
                  System.out.print("Los divisores son: ");
                  for (int j = 1;j <= numeroAleatorio;j++){
-                     if (numeroAleatorio % j == 0) {
-                        System.out.print(j + " ");
+                     if (numeroAleatorio%j == 0) {
+                        System.out.print(j1+ " ");
                         divisores++;
                     }
                  }
@@ -109,6 +109,7 @@ public class Vasquez_Alexander_Estructura {
 
             }else if(opcion==4){
                 contador4++;
+                System.out.println("\n***Bienvenido a Votaciones***");
                 System.out.print("Ingrese la cantidad de votantes: ");
                 int votantes = scanner.nextInt();
 
@@ -118,110 +119,50 @@ public class Vasquez_Alexander_Estructura {
                 int amarillo = 0;
                 int nulo = 0;
 
-                int i=1;
-                while (i<=votantes) {
-                    System.out.print("Ingrese el voto #" + i + " opciones: (AZUL, ROJO, NEGRO, AMARILLO): ");
+                for (int i = 1;i <= votantes;i++){
+                    System.out.print("Voto #" +i+ " (AZUL, ROJO, NEGRO, AMARILLO): ");
                     String voto = scanner.next();
                     if (voto.equalsIgnoreCase("AZUL")){
                         azul++;
-                    } else if (voto.equalsIgnoreCase("ROJO")){
+                    }else if (voto.equalsIgnoreCase("ROJO")){
                         rojo++;
-                    } else if (voto.equalsIgnoreCase("NEGRO")){
+                    }else if (voto.equalsIgnoreCase("NEGRO")){
                         negro++;
-                    } else if (voto.equalsIgnoreCase("AMARILLO")){
+                    }else if (voto.equalsIgnoreCase("AMARILLO")){
                         amarillo++;
-                    } else {
+                    }else{
                         nulo++;
-                    }   
-                    i++;
+                    }
                 }
 
                 int validos = azul + rojo + negro + amarillo;
-                if (validos >= (votantes*60)/100) {
+                if (validos*100>= votantes*60){
                     String ganador = "";
-                    if (azul> rojo && azul>negro && azul> amarillo){
+                    if(azul> rojo && azul>negro && azul> amarillo){
                         ganador = "AZUL";
                     } else if (rojo>azul && rojo>negro && rojo> amarillo){
                         ganador = "ROJO";
-                    } else if (negro >azul && negro> rojo && negro>amarillo){
+                    } else if(negro >azul && negro> rojo && negro>amarillo){
                         ganador = "NEGRO";
-                    } else {
+                    } else{
                         ganador = "AMARILLO";
                     }
                     System.out.println("Planilla ganadora: " + ganador);
-                } else {
-                    System.out.println("VOTACION FALLIDA");
+                }else{
+                    System.out.println("VOTACION  FALLIDA");
                 }
+            }else if(opcion==5){
+                System.out.println("Saliste del programa");
+                System.out.println("Veces Usadas: ");
+                System.out.println("1) Palabra Alreves: " + contador1);
+                System.out.println("2) Numero Perfecto: " + contador2);
+                System.out.println("3) Primos: " + contador3);
+                System.out.println("4) Votaciones: " + contador4);
+                break;
+            }else{
+                System.out.println("invalido");
 
-                
             }
-
-                
-                
-                     
-                     
-                     
-                     
-                   
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                    
-              
-            
-          
         }
-        
-        
-        
-      
-            
-        
     }
-    
 }
