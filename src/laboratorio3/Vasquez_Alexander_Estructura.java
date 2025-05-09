@@ -12,14 +12,14 @@ import java.util.Scanner;
 public class Vasquez_Alexander_Estructura {
     public static void main(String[] args) {
         Scanner scanner= new Scanner(System.in).useDelimiter("\n");
-        Random rand = new Random();
+        Random rand = new Random();// nueva funcion random
         int contador1=0;
         int contador2=0;
-        int contador3=0;
+        int contador3=0;// inicializo los contadores de uso de cada opcion
         int contador4=0;
         
         while (true){
-            System.out.println("\n====Menu====");
+            System.out.println("\n====Menu====");// las 5 opciones
             System.out.println("1) Palabra Alreves");
             System.out.println("2) Numero Perfecto");
             System.out.println("3) Numeros Primos");
@@ -28,7 +28,7 @@ public class Vasquez_Alexander_Estructura {
             System.out.println("Ingrese una opcion: 1-5.");
             int opcion = scanner.nextInt();
             
-            if(opcion==1){
+            if(opcion==1){// primera opcion
                 contador1++;
                 
                 System.out.println("\n***Bienvenido a Palabras Alreves***");
@@ -48,10 +48,10 @@ public class Vasquez_Alexander_Estructura {
                      System.out.println("Ingrese palabra: #"+i);
                      String palabra= scanner.next();
                      for(int j=palabra.length()-1 ;j>=0;j--){
-                         palabraInvertida+=palabra.charAt(j);
+                         palabraInvertida+=palabra.charAt(j);//le damos vuelta a la palabra
                      }
                      if(palabra.length()>mayorN){ 
-                         mayorN=palabra.length();
+                         mayorN=palabra.length();//actualizamos variables mayores
                          palabraMayor=palabra;
                      }
                      System.out.println("al reves: " + palabraInvertida);
@@ -67,7 +67,7 @@ public class Vasquez_Alexander_Estructura {
                 } else {
                     System.out.println("No es palindromo");
                 }
-            }else if     (opcion==2){
+            }else if     (opcion==2){//opciom 2
                 contador2++;
                 System.out.println("\n***Bienvenido a Numero Perfecto***");
                 System.out.print("Ingrese un numero: ");
@@ -76,7 +76,7 @@ public class Vasquez_Alexander_Estructura {
                 int i = 1;
                 while (i<numeroOpcion2) {
                     if (numeroOpcion2 % i == 0){
-                        suma += i;
+                        suma += i;// calcula cuantos primos hay
                     }
                     i++;
                 }
@@ -86,10 +86,10 @@ public class Vasquez_Alexander_Estructura {
                     System.out.println(numeroOpcion2 + " no es un numero perfecto.");
                 }
             
-            }else if (opcion==3){
+            }else if (opcion==3){//opcion 3
                 contador3++;
                 System.out.println("\n***Bienvenido a Numeros Primos***");
-                 int numeroAleatorio=rand.nextInt(100)+1;
+                 int numeroAleatorio=rand.nextInt(100)+1;//genera el numero aleatorio
                  System.out.println("Numero generado: "+ numeroAleatorio);
 
                  int divisores=0;
@@ -97,7 +97,7 @@ public class Vasquez_Alexander_Estructura {
                  for (int j = 1;j <= numeroAleatorio;j++){
                      if (numeroAleatorio%j == 0) {
                         System.out.print(j1+ " ");
-                        divisores++;
+                        divisores++;// da los divisores del numero
                     }
                  }
                  System.out.println();
@@ -107,7 +107,7 @@ public class Vasquez_Alexander_Estructura {
                     System.out.println(numeroAleatorio+" no es primo");
                  }
 
-            }else if(opcion==4){
+            }else if(opcion==4){//opcion 4
                 contador4++;
                 System.out.println("\n***Bienvenido a Votaciones***");
                 System.out.print("Ingrese la cantidad de votantes: ");
@@ -121,7 +121,7 @@ public class Vasquez_Alexander_Estructura {
 
                 for (int i = 1;i <= votantes;i++){
                     System.out.print("Voto #" +i+ " (AZUL, ROJO, NEGRO, AMARILLO): ");
-                    String voto = scanner.next();
+                    String voto = scanner.next();//empieza la votacion
                     if (voto.equalsIgnoreCase("AZUL")){
                         azul++;
                     }else if (voto.equalsIgnoreCase("ROJO")){
@@ -136,7 +136,7 @@ public class Vasquez_Alexander_Estructura {
                 }
 
                 int validos = azul + rojo + negro + amarillo;
-                if (validos*100>= votantes*60){
+                if (validos*100>= votantes*60){//calcula quien gana
                     String ganador = "";
                     if(azul> rojo && azul>negro && azul> amarillo){
                         ganador = "AZUL";
@@ -155,7 +155,7 @@ public class Vasquez_Alexander_Estructura {
                 System.out.println("Saliste del programa");
                 System.out.println("Veces Usadas: ");
                 System.out.println("1) Palabra Alreves: " + contador1);
-                System.out.println("2) Numero Perfecto: " + contador2);
+                System.out.println("2) Numero Perfecto: " + contador2);//pantalla final
                 System.out.println("3) Primos: " + contador3);
                 System.out.println("4) Votaciones: " + contador4);
                 break;
